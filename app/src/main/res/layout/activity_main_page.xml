@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Barre d'ajout d'un étudiant -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="8dp">
+
+        <!-- Bouton pour sélectionner une image -->
+        <Button
+            android:id="@+id/btn_select_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📸 Image" />
+
+        <!-- Champ pour entrer le nom -->
+        <EditText
+            android:id="@+id/edit_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:hint="Nom de l'étudiant"
+            android:padding="8dp"
+            android:background="@android:drawable/edit_text" />
+
+        <!-- Sélection de l'état avec un RadioGroup -->
+        <RadioGroup
+            android:id="@+id/radio_group_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <RadioButton
+                android:id="@+id/radio_present"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Présent"
+                android:checked="true" />
+
+            <RadioButton
+                android:id="@+id/radio_absent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Absent" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <!-- Bouton pour ajouter un étudiant -->
+    <Button
+        android:id="@+id/btn_add_student"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ajouter Étudiant"
+        android:padding="8dp"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/white" />
+
+    <!-- RecyclerView pour afficher la liste des étudiants -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:scrollbars="vertical" />
+
+</LinearLayout>
+

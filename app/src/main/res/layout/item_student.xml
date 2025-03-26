@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:background="@drawable/border_present"
+    android:gravity="center_vertical">
+
+    <!-- Student Image on the Left -->
+    <ImageView
+        android:id="@+id/student_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_launcher_background"
+        android:layout_marginEnd="10dp" />
+
+    <!-- Name and Status in the Middle -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/student_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nom de l'étudiant"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/student_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Présent"
+            android:textSize="16sp"
+            android:textColor="@color/green"/>
+    </LinearLayout>
+
+    <!-- Buttons on the Right (Stacked) -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Détails"
+            android:backgroundTint="@color/green"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/btn_toggle_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Absent"
+            android:backgroundTint="@color/red"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#76e5e1"
+    tools:context=".tp2.Activity_List_Absent">
+
+    <LinearLayout
+        android:id="@+id/linearLayoutContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:weightSum="3">
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Nom"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="8dp">
+
+            <RadioButton
+                android:id="@+id/radioAbsent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Absent"/>
+
+            <RadioButton
+                android:id="@+id/radioPresent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Présent"/>
+        </RadioGroup>
+
+
+        <Button
+            android:id="@+id/buttonAjouter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ajouter"
+            android:layout_marginStart="8dp"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/textViewAbsents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Liste des absents :"
+        android:textStyle="bold"
+        android:layout_margin="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutContainer"
+        android:layout_marginTop="16dp"/>
+
+    <ListView
+        android:id="@+id/listViewAbsents"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewAbsents"
+        android:layout_margin="8dp"/>
+
+
+    <TextView
+        android:id="@+id/textViewPresents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Liste des présents :"
+        android:layout_margin="12dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/listViewAbsents"
+        android:layout_marginTop="16dp"/>
+
+
+
+    <ListView
+        android:id="@+id/listViewPresents"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewPresents"
+        android:layout_margin="8dp"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

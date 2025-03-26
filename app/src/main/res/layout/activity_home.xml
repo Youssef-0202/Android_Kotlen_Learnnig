@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:gravity="fill_vertical"
+android:orientation="vertical"
+android:padding="18dp">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="30dp">
+
+    <EditText
+        android:id="@+id/idNomEtudiant"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:hint="Nom Etudiant"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black" />
+
+    <RadioGroup
+        android:id="@+id/idRadioGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <RadioButton
+            android:id="@+id/idAbsent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Absent"
+            android:textColor="@color/black"/>
+
+        <RadioButton
+            android:id="@+id/idPresent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Present"
+            android:textColor="@color/black"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/idAjouter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:backgroundTint="@color/black"
+        android:text="Ajouter"
+        android:textColor="@color/white" />
+</LinearLayout>
+
+
+<ListView
+    android:id="@+id/listViewEtudiants"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:divider="@android:color/darker_gray"
+    android:dividerHeight="1dp"
+    android:padding="8dp"/>
+</LinearLayout>
