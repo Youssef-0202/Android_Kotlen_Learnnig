@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/containerEtudiant"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -9,11 +10,11 @@
 
     <!-- Student Image on the Left -->
     <ImageView
-        android:id="@+id/student_image"
+        android:id="@+id/imageEtudiant"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/ic_launcher_background"
+        android:src="@drawable/user_logo"
         android:layout_marginEnd="10dp" />
 
     <!-- Name and Status in the Middle -->
@@ -22,23 +23,24 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical"
-        android:gravity="center_vertical">
+        android:gravity="center">
 
-        <TextView
-            android:id="@+id/student_name"
+       <TextView
+           android:id="@+id/textNom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nom de l'étudiant"
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/student_status"
+       <TextView
+            android:id="@+id/textPresence"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Présent"
             android:textSize="16sp"
             android:textColor="@color/green"/>
+
     </LinearLayout>
 
     <!-- Buttons on the Right (Stacked) -->
@@ -48,19 +50,19 @@
         android:orientation="vertical"
         android:gravity="center">
 
+
         <Button
-            android:id="@+id/btn_details"
+            android:id="@+id/btnDetails"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Détails"
-            android:backgroundTint="@color/green"
-            android:layout_marginBottom="8dp"/>
+            android:backgroundTint="@color/blue"/>
 
         <Button
-            android:id="@+id/btn_toggle_status"
+            android:id="@+id/btnModifier"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Absent"
+            android:text="Modifier"
             android:backgroundTint="@color/red"/>
     </LinearLayout>
 

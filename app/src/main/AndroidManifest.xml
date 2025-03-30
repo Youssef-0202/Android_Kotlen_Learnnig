@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- Autorisation pour lire les fichiers sur Android < 13 -->
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
 
     <application
         android:allowBackup="true"
@@ -16,13 +17,16 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
-            android:name=".tp_.DetailsActivity"
+            android:name=".devoir.DetailsDevoirActivity"
             android:exported="false" />
         <activity
-            android:name=".tp_.HomeActivity"
-            android:exported="true"/>
+            android:name=".tp3.DetailsActivity"
+            android:exported="false" />
         <activity
-            android:name=".tp3.MainPage"
+            android:name=".tp3.HomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".devoir.MainPage"
             android:exported="true" />
         <activity
             android:name=".tp2.Activity_List_Absent"
