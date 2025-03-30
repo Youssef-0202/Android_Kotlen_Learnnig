@@ -40,13 +40,13 @@ class StudentAdapter(
         val studentStatus: TextView = view.findViewById(R.id.textPresence)
         val btnModifier: Button = view.findViewById(R.id.btnModifier)
         val btnDetails: Button = view.findViewById(R.id.btnDetails)
-        val itemContainer: View = view.findViewById(R.id.containerEtudiant) // Add this to your item_student.xml
+        val itemContainer: View = view.findViewById(R.id.containerEtudiant)
 
         fun bind(student: Student, position: Int) {
             studentName.text = student.name
             updatePresenceUI(student.isPresent)
 
-            // Load image
+
             try {
                 if(student.imagePath != null){
                     if (student.imagePath.startsWith("content://")) {

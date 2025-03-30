@@ -28,12 +28,9 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var radioGroup: RadioGroup
     private lateinit var btnAjouter: Button
     private lateinit var listViewEtudiants: ListView
-
     private lateinit var imagePickerLauncher: ActivityResultLauncher<Intent>
-
     private val etudiantsList = ArrayList<Etudiant>()
     private lateinit var etudiantAdapter: EtudiantAdapter
-
     private val PICK_IMAGE_REQUEST = 1
     private lateinit var currentStudent: Etudiant
 
@@ -44,8 +41,9 @@ class HomeActivity : AppCompatActivity() {
         editTextNom = findViewById(R.id.idNomEtudiant)
         radioGroup = findViewById(R.id.idRadioGroup)
         btnAjouter = findViewById(R.id.idAjouter)
-        listViewEtudiants = findViewById(R.id.listViewEtudiants)
 
+
+        listViewEtudiants = findViewById(R.id.listViewEtudiants)
         etudiantAdapter = EtudiantAdapter(this, etudiantsList)
         listViewEtudiants.adapter = etudiantAdapter
 
@@ -53,11 +51,8 @@ class HomeActivity : AppCompatActivity() {
             if (result.resultCode == Activity.RESULT_OK) {
                 val imageUri = result.data?.data
                 if (imageUri != null) {
-                    // Mettre à jour l'image dans ImageView (ajoute un ImageView pour afficher l'image)
                     val imageView = findViewById<ImageView>(R.id.imageEtudiant)
                     imageView.setImageURI(imageUri)
-
-                    // Optionnel : Sauvegarder l'image dans un dossier interne
                     saveImageToInternalStorage(imageUri)
                 }
             }
@@ -106,7 +101,6 @@ class HomeActivity : AppCompatActivity() {
             val nom = data.getStringExtra("nom")
             val estPresent = data.getBooleanExtra("estPresent", false)
 
-            // Mettre à jour la liste des étudiants
             val etudiant = etudiantsList.find { it.nom == nom }
             if (etudiant != null) {
                 etudiant.estPresent = estPresent

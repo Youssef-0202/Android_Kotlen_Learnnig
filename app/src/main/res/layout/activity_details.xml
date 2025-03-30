@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Ligne 1 : Image + Nom + Statut -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

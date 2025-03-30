@@ -28,16 +28,15 @@ import java.io.IOException
 
 
 class MainPage : AppCompatActivity() {
+
     private lateinit var recyclerView: RecyclerView
     private lateinit var studentAdapter: StudentAdapter
     private val studentList = mutableListOf<Student>()
-
     private lateinit var btnSelectImage: Button
     private lateinit var editName: EditText
     private lateinit var radioGroupState: RadioGroup
     private lateinit var radioPresent: RadioButton
     private lateinit var radioAbsent: RadioButton
-
     private var selectedImagePath: String? = null
 
 
@@ -57,7 +56,6 @@ class MainPage : AppCompatActivity() {
             insets
         }
 
-        // Initialisation des vues
         recyclerView = findViewById(R.id.recycler_view)
         btnSelectImage = findViewById(R.id.btn_select_image)
         editName = findViewById(R.id.edit_name)
@@ -65,12 +63,12 @@ class MainPage : AppCompatActivity() {
         radioPresent = findViewById(R.id.radio_present)
         radioAbsent = findViewById(R.id.radio_absent)
 
-        // Configuration du RecyclerView
+
         recyclerView.layoutManager = LinearLayoutManager(this)
-        studentAdapter = StudentAdapter(this, studentList)  // Removed recyclerView parameter
+        studentAdapter = StudentAdapter(this, studentList)
         recyclerView.adapter = studentAdapter
 
-        // Sélection d'une image
+
         btnSelectImage.setOnClickListener {
             val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
             intent.addCategory(Intent.CATEGORY_OPENABLE)
@@ -78,22 +76,15 @@ class MainPage : AppCompatActivity() {
             startActivityForResult(intent, REQUEST_IMAGE_PICK)
         }
 
-        // Initialize RecyclerView and adapter
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        studentAdapter = StudentAdapter(this, studentList)
-        recyclerView.adapter = studentAdapter
 
-        // Set item click listener
-        // Set up the listener for student changes
+
         studentAdapter.setOnStudentChangeListener(object : StudentAdapter.OnStudentChangeListener {
             override fun onStudentUpdated(position: Int, student: Student) {
-                // Update the student in the list
                 studentList[position] = student
-                // You can add additional logic here if needed
             }
         })
 
-        // Ajouter un étudiant
+
         findViewById<Button>(R.id.btn_add_student).setOnClickListener {
             addStudent()
         }
@@ -104,12 +95,9 @@ class MainPage : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-
         if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
             val id = data?.getIntExtra("id", -1) ?: -1
             val isPresent = data?.getBooleanExtra("estPresent", false) ?: false
-
-            // Find and update the student
             val index = studentList.indexOfFirst { it.id == id }
             if (index != -1) {
                 studentList[index].isPresent = isPresent
@@ -120,10 +108,7 @@ class MainPage : AppCompatActivity() {
         if (requestCode == REQUEST_IMAGE_PICK && resultCode == Activity.RESULT_OK) {
             val imageUri = data?.data
             imageUri?.let {
-                // Autoriser l'accès à l'image même après fermeture de l'application
                 contentResolver.takePersistableUriPermission(it, Intent.FLAG_GRANT_READ_URI_PERMISSION)
-
-                // Stocker l'URI au lieu d'un chemin absolu
                 selectedImagePath = it.toString()
             }
         }
@@ -131,8 +116,6 @@ class MainPage : AppCompatActivity() {
         if (requestCode == 2 && resultCode == Activity.RESULT_OK) {
             val id = data?.getIntExtra("id", -1) ?: -1
             val isPresent = data?.getBooleanExtra("estPresent", false) ?: false
-
-            // Update the student's presence status
             studentList.find { it.id == id }?.isPresent = isPresent
             studentAdapter.notifyDataSetChanged()
         }
@@ -166,8 +149,6 @@ class MainPage : AppCompatActivity() {
             }
 
             Log.d("MainPage", "Selected image path: $selectedImagePath")
-
-            // Save the image locally and get the path
             val imageUri = Uri.parse(selectedImagePath!!)
             val savedImagePath = saveImageLocally(imageUri) ?: selectedImagePath!!
 

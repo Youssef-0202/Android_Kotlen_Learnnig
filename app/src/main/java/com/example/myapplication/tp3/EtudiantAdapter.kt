@@ -12,7 +12,7 @@ import androidx.core.content.ContextCompat
 import com.example.myapplication.R
 import java.io.File
 
-class EtudiantAdapter(
+class   EtudiantAdapter(
     private val mContext: Context,
     private val etudiants: ArrayList<Etudiant>
 ) : ArrayAdapter<Etudiant>(mContext, R.layout.item_student, etudiants) {
@@ -20,7 +20,6 @@ class EtudiantAdapter(
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val view = convertView ?: LayoutInflater.from(mContext).inflate(R.layout.item_student, parent, false)
 
-        // Bind UI elements
         val imageEtudiant = view.findViewById<ImageView>(R.id.imageEtudiant)
         val textNom = view.findViewById<TextView>(R.id.textNom)
         val textPresence = view.findViewById<TextView>(R.id.textPresence)
@@ -28,13 +27,10 @@ class EtudiantAdapter(
         val btnDetails = view.findViewById<Button>(R.id.btnDetails)
         val containerEtudiant = view.findViewById<LinearLayout>(R.id.containerEtudiant)
 
-        // Get student data
         val etudiant = etudiants[position]
-
-        // Set student name
         textNom.text = etudiant.nom
 
-        // Update presence status dynamically
+
         if (etudiant.estPresent) {
             textPresence.text = "Présent"
             textPresence.setTextColor(ContextCompat.getColor(mContext, android.R.color.holo_green_dark))
@@ -56,7 +52,7 @@ class EtudiantAdapter(
             imageEtudiant.setImageResource(R.drawable.user_logo)
         }
 
-        // Handle "Modifier" button click (Toggle Presence)
+
         btnModifier.setOnClickListener {
             etudiant.estPresent = !etudiant.estPresent
             notifyDataSetChanged() // Refresh UI
