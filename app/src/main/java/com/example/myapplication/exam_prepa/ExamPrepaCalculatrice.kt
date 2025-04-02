@@ -1,4 +1,4 @@
-package com.example.myapplication.tp1
+package com.example.myapplication.exam_prepa
 
 import android.os.Bundle
 import android.view.View
@@ -6,22 +6,21 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.example.myapplication.R
 
-class Calculatrice : AppCompatActivity() {
+class ExamPrepaCalculatrice : AppCompatActivity() {
+
+    val nom = intent.getStringExtra("nom")
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_calculatrice)
-
-        val nom = intent.getStringExtra("nom")
-
-
-        if (nom != null) {
-            val textViewNom = findViewById<TextView>(R.id.textViewNom)
-            textViewNom.visibility = View.VISIBLE
-            textViewNom.text = "Bonjour, $nom"
-        }
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_exam_prepa_calculatrice)
 
         val editTextA = findViewById<EditText>(R.id.editTextA);
         val editTextB = findViewById<EditText>(R.id.editTextB);
@@ -31,6 +30,12 @@ class Calculatrice : AppCompatActivity() {
         val buttonDivide = findViewById<Button>(R.id.buttonDivide)
         val buttonCalculate = findViewById<Button>(R.id.buttonCalculate)
         val textViewResult = findViewById<TextView>(R.id.textViewResult)
+
+        if (nom != null) {
+            val textViewNom = findViewById<TextView>(R.id.textViewNom)
+            textViewNom.visibility = View.VISIBLE
+            textViewNom.text = "Bonjour, $nom"
+        }
 
         var selectedOperation = ""
 
@@ -64,6 +69,7 @@ class Calculatrice : AppCompatActivity() {
             }
 
         }
+
 
     }
 }
