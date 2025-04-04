@@ -17,7 +17,7 @@ class Activity_List_Absent : AppCompatActivity() {
     private lateinit var editTextName: EditText
     private lateinit var radioGroup: RadioGroup
     private lateinit var buttonAjouter: Button
-    private lateinit var listViewAbsents: ListView
+            private lateinit var listViewAbsents: ListView
     private lateinit var listViewPresents: ListView
     private val absents = mutableListOf<String>()
     private val presents = mutableListOf<String>()

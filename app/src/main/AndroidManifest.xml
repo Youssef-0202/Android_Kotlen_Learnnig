@@ -17,10 +17,22 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
-            android:name=".exam_prepa.ExamPrepaCalculatrice"
+            android:name=".exam_prepa._2.ExamPrepaCustumAdapter"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".exam_prepa._2.ExamPrepaListAdapter"
             android:exported="true" />
         <activity
-            android:name=".exam_prepa.ExamPrepMain"
+            android:name=".exam_prepa._1.ExamPrepaCalculatrice"
+            android:exported="true" />
+        <activity
+            android:name=".exam_prepa._1.ExamPrepMain"
             android:exported="true" />
         <activity
             android:name=".devoir.DetailsDevoirActivity"

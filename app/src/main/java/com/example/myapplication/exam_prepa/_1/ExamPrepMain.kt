@@ -1,4 +1,4 @@
-package com.example.myapplication.exam_prepa
+package com.example.myapplication.exam_prepa._1
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,10 +11,7 @@ import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.myapplication.R
-import com.example.myapplication.tp1.Calculatrice
 
 class ExamPrepMain : AppCompatActivity() {
 
