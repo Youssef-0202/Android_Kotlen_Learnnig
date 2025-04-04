@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        >
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Nom"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="0.8"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioAbsent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Absent"/>
+
+            <RadioButton
+                android:id="@+id/radioPresent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Présent"/>
+        </RadioGroup>
+
+
+        <Button
+            android:id="@+id/buttonAjouter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="8dp"
+            android:text="Ajouter"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/textViewAbsents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Liste des etudiant :"
+            android:textStyle="bold"
+            android:layout_margin="12dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listViewEtudiants"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white" />
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

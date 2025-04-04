@@ -47,11 +47,9 @@ class ExamPrepaEtudiantAdapter(
                 "Present"
             }
 
-            // Mettre à jour l'affichage
             textPresence.text = etudiant.state
             updateAppearance(view, textPresence, etudiant.state)
 
-            // Notifier le changement
             notifyDataSetChanged()
         }
 
